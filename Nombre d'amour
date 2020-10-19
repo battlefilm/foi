@@ -1,0 +1,15 @@
+prenoms = input().split(" ")
+nombres = [0] * 2
+for idPrenom in range(2):
+   prenom = prenoms[idPrenom]
+   nombre = 0  
+   for posLettre in range(len(prenom)):
+      nombre = nombre + (ord(prenom[posLettre]) - ord("A"))
+   while nombre >= 10:
+      sommeChiffre = 0
+      while nombre > 0:
+         sommeChiffre = sommeChiffre + nombre % 10
+         nombre = nombre // 10
+      nombre = sommeChiffre
+   nombres[idPrenom] = nombre
+print("{} {}".format(nombres[0], nombres[1]))
